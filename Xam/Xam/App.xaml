@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:Xam.Converters;assembly=Xam"
+             mc:Ignorable="d"
+             x:Class="Xam.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
+                <!-- Application resource dictionary -->
+
+                <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+
+                <Color x:Key="MainMenuListBackgroundColor">#FF4195F4</Color>
+                <Color x:Key="MainMenuListSelectionColor">#19405366</Color>
+                <Color x:Key="MainMenuFooterTextColor">#FFE9F8FF</Color>
+
+                <OnPlatform x:Key="MainMenuHeaderHeight"
+                    x:TypeArguments="x:Double"
+                    Android="160.0"
+                    WinPhone="160.0"
+                    iOS="190.0" />
+
+
+                <OnPlatform x:TypeArguments="x:String" x:Key="FontMaterial">
+                    <On Platform="Android" Value="MaterialIconsRegular.ttf#Regular" />
+                    <On Platform="iOS" Value="MaterialIcons-Regular" />
+                    <On Platform="UWP" Value="/Assets/Fonts/MaterialIconsRegular.ttf#Material Icons" />
+                    <!--  #name must be the same as FontName when want to install in e.g. Windows  -->
+                </OnPlatform>
+
+                <Style x:Key="MenuItemFontIconLabelStyle" TargetType="Label">
+                    <Setter Property="Margin" Value="24,0,0,0" />
+                    <Setter Property="TextColor" Value="White" />
+                    <Setter Property="VerticalOptions" Value="Center" />
+                    <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                    <Setter Property="HorizontalTextAlignment" Value="Start" />
+                    <Setter Property="FontSize" Value="20" />
+                    <Setter Property="FontFamily" Value="{StaticResource FontMaterial}" />
+                </Style>
+                <Style x:Key="MenuItemLabelStyle" TargetType="Label">
+                    <Setter Property="Margin" Value="20,0,0,0" />
+                    <Setter Property="TextColor" Value="White" />
+                    <Setter Property="VerticalOptions" Value="Center" />
+                    <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                    <Setter Property="HorizontalTextAlignment" Value="Start" />
+                    <Setter Property="FontAttributes" Value="None" />
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="LineBreakMode" Value="TailTruncation" />
+                </Style>
+                <Style x:Key="MenuFooterItemLabelStyle" TargetType="Label">
+                    <Setter Property="TextColor" Value="{StaticResource MainMenuFooterTextColor}" />
+                    <Setter Property="VerticalOptions" Value="Center" />
+                    <Setter Property="HorizontalOptions" Value="Start" />
+                    <Setter Property="FontAttributes" Value="None" />
+                    <Setter Property="FontSize" Value="14" />
+                    <Setter Property="LineBreakMode" Value="NoWrap" />
+                </Style>
+                <Style x:Key="MenuFooterSubItemLabelStyle" TargetType="Label">
+                    <Setter Property="TextColor" Value="{StaticResource MainMenuFooterTextColor}" />
+                    <Setter Property="VerticalOptions" Value="Center" />
+                    <Setter Property="HorizontalOptions" Value="Start" />
+                    <Setter Property="FontAttributes" Value="None" />
+                    <Setter Property="FontSize" Value="12" />
+                    <Setter Property="LineBreakMode" Value="NoWrap" />
+                </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+    
+</Application>
